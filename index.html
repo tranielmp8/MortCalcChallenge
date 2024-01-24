@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Mortgage Calculator</title>
+</head>
+<body>
+    <!-- if we want to do a navbar later -->
+    <nav>
+
+    </nav>
+    <main>
+      <h1>Mortgage Calculator</h1>
+      <div class="modal"></div>
+      <!-- Form Begin -->
+      <form >
+        <h2>Calc Sheet</h2>
+        <label >
+          <h3>Name:</h3>
+          <input type="text">
+        </label>
+        <label >
+          <h3>Loan Amount:</h3>
+        </label>
+        <input type="number">
+        <div class="radio">
+          <h3>Interest Rate: </h3>
+          <input type="radio" value="4%" name="interest">
+          <label for="interest">
+            4%
+          </label>
+          <input type="radio" value="5%" name="interest">
+          <label for="interest">
+            5%
+          </label>
+          <input type="radio" value="6%" name="interest">
+          <label for="interest">
+            6%
+          </label>
+        </div>
+        <!-- br is for an extra space between radio button and downpayment -->
+        <br>
+        <div class="downpayment">
+          <label for="">Down Payment:</label>
+          $<input type="number">
+        </div>
+        <div class="select">
+          <h3>Loan Term</h3>
+          <select name="term" id="">
+            <option value="30">30 Years</option>
+            <option value="15">15 Years</option>
+
+          </select>
+        </div>
+        <!--  -->
+        <br>
+        
+        <button>Submit</button>
+      </form>
+    </main>
+
+  <script src="script.js" ></script>
+</body>
+</html>
