@@ -16,34 +16,36 @@
         <h1>Mortgage Calculator</h1>
         <div class="modal"></div>
         <!-- Form Begin -->
-        <form >
+        <form onsubmit="submit()" class="submit-form">
           <h2>Calc Sheet</h2>
           <label >
             <h3>Name:</h3>
             <input 
               type="text"
-              name="name"
-              class="name"
+              name="client"
+              class="client"
+              required
             >
           </label>
           <label >
             <h3>Loan Amount:</h3>
           </label>
           <input 
+            class="loan"
             type="number"
-            name="loan-amount"
+            name="loan"
           >
           <div class="radio">
             <h3>Interest Rate: </h3>
-            <input type="radio" value="4%" name="interest">
+            <input class="interest" type="radio" value="4%" name="interest">
             <label for="interest">
               4%
             </label>
-            <input type="radio" value="5%" name="interest">
+            <input class="interest" type="radio" value="5%" name="interest">
             <label for="interest">
               5%
             </label>
-            <input type="radio" value="6%" name="interest">
+            <input class="interest" type="radio" name="interest">
             <label for="interest">
               6%
             </label>
@@ -68,18 +70,23 @@
           <button 
             class="btn submit" 
             type="button"
-            onclick="openPopup()"
             >
             Submit</button>
         </form>
       </main>
+
+      <!-- MODAL INFORMATION -->
       <div class="popup">
         <h2>Results</h2>
-        <p>Loan Amount</p>
-        <p>payments</p>
+        <div class="results">
+          <p class="client-name"></p>
+          <p class="loan-amount"></p>
+          <p class="int-rate"></p>
+        </div>
+        
         <button 
           type="button"
-          onclick="closePopup()"
+          class="approve"
           >
           Approve
         </button>
