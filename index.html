@@ -37,32 +37,37 @@
           >
           <div class="radio">
             <h3>Interest Rate: </h3>
-            <input class="interest" type="radio" value="4%" name="interest">
+            <input class="interest" type="radio" value="4"  name="interest">
             <label for="interest">
               4%
             </label>
-            <input class="interest" type="radio" value="5%" name="interest">
+            <input class="interest" value="5" type="radio"  name="interest">
             <label for="interest">
               5%
             </label>
-            <input class="interest" type="radio" name="interest">
+            <input class="interest" type="radio" value="6" name="interest">
             <label for="interest">
               6%
             </label>
           </div>
           <!-- br is for an extra space between radio button and downpayment -->
           <br>
-          <div class="downpayment">
-            <label for="">Down Payment:</label>
-            $<input type="number">
+          <div class="down-payment">
+            <label for="downpayment">Down Payment:</label>
+            $<input 
+              type="number"
+              class="downpayment"
+              name="downpayment"
+            >
           </div>
           <div class="select">
-            <h3>Loan Term</h3>
-            <select name="term" id="">
-              <option value="30">30 Years</option>
-              <option value="15">15 Years</option>
-  
-            </select>
+           
+            <label for="term">Loan Term</label>
+            <input 
+              type="number"
+              name="term"
+              class="term"
+            >
           </div>
           <!--  -->
           <br>
@@ -77,7 +82,7 @@
 
       <!-- MODAL INFORMATION -->
       <div class="popup">
-        <h2>Results</h2>
+        <h2>Approved!</h2>
         <div class="results">
           <p class="client-name"></p>
           <p class="loan-amount"></p>
@@ -92,6 +97,7 @@
         </button>
         <button 
           type="button"
+          class="decline"
           onclick="closePopup()"
           >
           Decline
