@@ -43,7 +43,7 @@ submit.addEventListener('click', e => {
       <h3>Congratulations ${client}!</h3>
       <p>Your total loan is: $${loan}</p>    
       <p>Your down payment is: $${downpayment}</p>    
-      <p>You're approved interest rate is: ${radio}%</p> 
+      <p>Your approved interest rate is: ${radio}%</p> 
       <p>Your loan term is: ${t} years</p> 
       <h4>Monthly Payments: $${monthlyPayment.toFixed(2)}</h4>   
     `;
@@ -114,7 +114,6 @@ function openPopup() {
 function closePopup() {
   popup.classList.remove("open-popup");
   sheet.classList.remove("hidden")
-  innerHTML = ''
  }
 
 // function addName() {
