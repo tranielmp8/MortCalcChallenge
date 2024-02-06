@@ -1,9 +1,9 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
+  font-family: 'Comfortaa', sans-serif;
   padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-
 
 main {
   max-width: 500px;
@@ -11,12 +11,85 @@ main {
   margin: 30px auto;
   padding: 1rem;
   border-radius: 15px;
-  background: #eee;
+  
 }
 
-body {
-  background: #222;
+h1 {
+  text-align: center;
+  margin: .5rem;
 }
+
+h3 {
+  margin: .7rem;
+}
+
+label {
+  margin: .5rem;
+}
+
+p{
+  font-size: 19px;
+  margin-bottom: .5rem;
+}
+
+input {
+  margin: .7rem;
+  font-size: 20px;
+  padding: .3rem;
+  border-radius: 7px;
+}
+
+.details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.client, .loan, .downpayment, .term  {
+  width: 80%;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  padding: .5rem .7rem;
+  border-radius: 5px;
+  border: none;
+  background: #333;
+  color: #fff;
+  cursor: pointer;
+  transition: .2s ease-in-out;
+}
+
+.btn:hover {
+  padding: .5rem .7rem;
+  border-radius: 5px;
+  border: none;
+  background: #fff;
+  color: #333;
+  border: #333 solid 3px;
+  cursor: pointer;
+}
+
+.radio-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.interest {
+  padding: .3rem;
+  margin: .2rem .4rem;
+  height: 20px;
+  width: 20px;
+}
+
 
 .hidden {
   opacity: 0;

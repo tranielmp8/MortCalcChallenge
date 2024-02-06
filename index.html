@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <title>Mortgage Calculator</title>
 </head>
@@ -11,72 +14,76 @@
     <!-- <nav>
 
     </nav> -->
-    <div class="container">
-      <main class="calc-sheet">
+    <div class="bg-black">
+      <main class="calc-sheet container mx-auto sm bg-slate-50">
         <h1>Mortgage Calculator</h1>
         <div class="modal"></div>
         <!-- Form Begin -->
         <form onsubmit="submit()" class="submit-form">
-          <h2>Calc Sheet</h2>
+          <div class="details">
           <label >
             <h3>Name:</h3>
-            <input 
+          </label>
+          <input 
               type="text"
               name="client"
               class="client"
               required
             >
-          </label>
           <label >
             <h3>Loan Amount:</h3>
           </label>
           <input 
+            required
             class="loan"
             type="number"
             name="loan"
           >
-          <div class="radio">
-            <h3>Interest Rate: </h3>
-            <input class="interest" type="radio" value="4"  name="interest">
-            <label for="interest">
-              4%
-            </label>
-            <input class="interest" value="5" type="radio"  name="interest">
-            <label for="interest">
-              5%
-            </label>
-            <input class="interest" type="radio" value="6" name="interest">
-            <label for="interest">
-              6%
-            </label>
-          </div>
-          <!-- br is for an extra space between radio button and downpayment -->
-          <br>
-          <div class="down-payment">
-            <label for="downpayment">Down Payment:</label>
-            $<input 
-              type="number"
-              class="downpayment"
-              name="downpayment"
-            >
-          </div>
-          <div class="select">
-           
-            <label for="term">Loan Term</label>
-            <input 
-              type="number"
-              name="term"
-              class="term"
-            >
-          </div>
-          <!--  -->
+
+          <label for="downpayment"><h3>Down Payment:</h3></label>
+          <input 
+            type="number"
+            class="downpayment"
+            name="downpayment"
+          >
           <br>
   
+          <label for="term"><h3>Loan Term</h3></label>
+          <input 
+            type="number"
+            name="term"
+            class="term"
+            required
+          >
+          <div class="radio">
+            <h3>Interest Rate: (Must Select One) </h3>
+            <div class="radio-btns">
+              <input class="interest" type="radio" value="4"  name="interest" >
+              <label for="interest">
+                4%
+              </label>
+              <input class="interest" value="5" type="radio"  name="interest" >
+              <label for="interest">
+                5%
+              </label>
+              <input class="interest" type="radio" value="6" name="interest" >
+              <label for="interest">
+                6%
+              </label>
+            </div>
+          </div>
+        </div>
+          <!-- br is for an extra space between radio button and downpayment -->
+          <br>
+        <div class="btn-container">
           <button 
             class="btn submit" 
             type="button"
             >
-            Submit</button>
+            Submit
+          </button>
+        </div>
+          
         </form>
       </main>
 

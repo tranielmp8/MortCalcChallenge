@@ -15,40 +15,47 @@ const approve = document.querySelector(".approve");
 const decline = document.querySelector(".decline");
 
 submit.addEventListener('click', e => {
+
   e.preventDefault(); // PREVENT REFRESH AT SUBMIT OR DEFAULT ACTION
   let client = document.querySelector(".client").value;
   let radio = Number(document.querySelector('input[name="interest"]:checked').value);
   let t = Number(document.querySelector('.term').value);
   let loan = Number(document.querySelector(".loan").value);
   let downpayment = Number(document.querySelector(".downpayment").value);
+  if(!radio) {
+    alert('Please select an interest rate')
+  }
+ 
+      // breakdown of monthly payment formula
+    const principal = loan - downpayment;
+    const r = (radio/100.00);
+    const n =  12;
+    const params = (1 + (r / n))
+    const expo = n * t
+    const numerator = principal * (r / n);
+    const denominator = 1 - Math.pow(params, -expo)
+    const monthlyPayment = numerator / denominator;
+    
+    console.log(monthlyPayment)
 
-  // breakdown of monthly payment formula
-  const principal = loan - downpayment;
-  const r = (radio/100.00);
-  const n =  12;
-  const params = (1 + (r / n))
-  const expo = n * t
-  const numerator = principal * (r / n);
-  const denominator = 1 - Math.pow(params, -expo)
-  const monthlyPayment = numerator / denominator;
+    let div = document.createElement("div");
+    div.innerHTML = `
+      <h3>Congratulations ${client}!</h3>
+      <p>Your total loan is: $${loan}</p>    
+      <p>Your down payment is: $${downpayment}</p>    
+      <p>You're approved interest rate is: ${radio}%</p> 
+      <p>Your loan term is: ${t} years</p> 
+      <h4>Monthly Payments: $${monthlyPayment.toFixed(2)}</h4>   
+    `;
+    results.appendChild(div)
+
+    // console.log('Interest: ' + Number(radio) * .01);
+    // console.log(`Downpayment = ${Number(downpayment)}, and Loan amount = ${Number(loan)} so the Principal = ${Number(loan) - Number(downpayment)}`)
+
+    openPopup()
   
-  console.log(monthlyPayment)
 
-  let div = document.createElement("div");
-  div.innerHTML = `
-    <h3>Congratulations ${client}!</h3>
-    <p>Your total loan is: $${loan}</p>    
-    <p>Your down payment is: $${downpayment}</p>    
-    <p>You're approved interest rate is: ${radio}%</p> 
-    <p>Your loan term is: ${t} years</p> 
-    <h4>Monthly Payments: $${monthlyPayment.toFixed(2)}</h4>   
-  `;
-  results.appendChild(div)
-
-  // console.log('Interest: ' + Number(radio) * .01);
-  // console.log(`Downpayment = ${Number(downpayment)}, and Loan amount = ${Number(loan)} so the Principal = ${Number(loan) - Number(downpayment)}`)
-
-  openPopup()
+  
   
   decline.addEventListener('click', e => {
     e.preventDefault()
@@ -61,6 +68,7 @@ submit.addEventListener('click', e => {
     alert('Results Submitted')
     location.reload()    
   })
+  
   
 
 })
